@@ -203,12 +203,15 @@ const useStyles = makeStyles((theme) => ({
                     </ListItemIcon>
                 <ListItemText primary="Stock Exchange List" />
                 </ListItem>
-                <ListItem button onClick = {()=>handleCompId(1)} selected = {compId == 1}>
+                {localStorage.getItem('admin')=="true" ? 
+                <ListItem button onClick = {()=>handleCompId(1)}  selected = {compId == 1}>
                     <ListItemIcon>
                     <DashboardIcon />
                     </ListItemIcon>
                 <ListItemText primary="Add Stock Exchange" />
                 </ListItem>
+                : ""}
+
                 <ListItem button onClick = {()=>handleCompId(2)} disabled={id==null} selected = {compId == 2}>
                     <ListItemIcon>
                     <DashboardIcon />
@@ -216,13 +219,15 @@ const useStyles = makeStyles((theme) => ({
                 <ListItemText primary="Stock Exchange Details"  />
                 </ListItem>
 
-                <ListItem button onClick = {()=>handleCompId(3)} disabled={id==null} selected = {compId == 3}>
+                {localStorage.getItem('admin')=="true" ? <ListItem button onClick = {()=>handleCompId(3)} disabled={id==null} selected = {compId == 3}>
                     <ListItemIcon>
                     <DashboardIcon />
                     </ListItemIcon>
                 <ListItemText primary="Update Stock Exchange" />
-                </ListItem>
+                </ListItem> : ""}
                 
+                
+               
                 <ListItem button onClick = {()=>handleCompId(4)} disabled={id==null} selected = {compId == 4}>
                     <ListItemIcon>
                     <DashboardIcon />

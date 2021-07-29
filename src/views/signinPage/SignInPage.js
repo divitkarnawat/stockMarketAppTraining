@@ -12,6 +12,7 @@ const axios = require('axios');
 
 const textFieldLabels = ["Username","Password"];
 const textFieldNames = ["username","password"];
+const textFieldTypes = ["text", "password"];
 
 export default class SignInPage extends React.Component{
     
@@ -120,6 +121,7 @@ export default class SignInPage extends React.Component{
                         textFieldNames.map((tfn,id) => (
                             <TextField 
                         required
+                        type = {textFieldTypes[id]}
                         id={tfn}
                         name={tfn}
                         label={textFieldLabels[id]}

@@ -136,9 +136,10 @@ class DataInput extends React.Component {
             onChange={this.handleChange}
           />
           <label htmlFor="file">
+          {localStorage.getItem('admin')=="true" ? 
         <Button variant="contained" color="primary" component="span">
           Upload Stock Price Data
-        </Button>
+        </Button> : ""}
       </label>
         </div>
       </form>
@@ -155,7 +156,7 @@ class DataInput extends React.Component {
 class OutTable extends React.Component {
   render() {
     return (
-      <div className="table-responsive">
+      <div className="table-responsive uploadStockPriceTable">
         <table className="table table-striped">
           <thead>
             <tr>

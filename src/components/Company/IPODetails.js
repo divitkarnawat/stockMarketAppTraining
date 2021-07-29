@@ -94,10 +94,10 @@ export default class IPODetails extends React.Component
                     variant = "fullWidth"
                     
                 >
-                    <Tab label="Add IPO" disabled = {this.state.status}/>
+                    <Tab label="Add IPO" disabled = {this.state.status  || localStorage.getItem('admin')=="false"}/>
                     <Tab label="Show IPO Details" disabled = {!this.state.status} />
-                    <Tab label="Add IPO to Stock Exchange" disabled = {!this.state.status}/>
-                    <Tab label="Update IPO Details" disabled = {!this.state.status}/>
+                    <Tab label="Add IPO to Stock Exchange" disabled = {!this.state.status  || localStorage.getItem('admin')=="false"}/>
+                    <Tab label="Update IPO Details" disabled = {!this.state.status  || localStorage.getItem('admin')=="false"}/>
                     
                 </Tabs>
                 </Paper>

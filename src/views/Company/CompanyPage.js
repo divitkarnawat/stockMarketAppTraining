@@ -207,12 +207,15 @@ const useStyles = makeStyles((theme) => ({
                     </ListItemIcon>
                 <ListItemText primary="Company List" />
                 </ListItem>
-                <ListItem button onClick = {()=>handleCompId(1)} selected = {compId == 1}>
+                {localStorage.getItem('admin')=="true" ? 
+                <ListItem button onClick = {()=>handleCompId(1)} selected = {compId == 1} >
                     <ListItemIcon>
                     <DashboardIcon />
                     </ListItemIcon>
                 <ListItemText primary="Add Company" />
                 </ListItem>
+                : ""}
+
                 <ListItem button onClick = {()=>handleCompId(2)} disabled={id==null} selected = {compId == 2}>
                     <ListItemIcon>
                     <DashboardIcon />
@@ -220,12 +223,14 @@ const useStyles = makeStyles((theme) => ({
                 <ListItemText primary="Company Details"  />
                 </ListItem>
 
+                {localStorage.getItem('admin')=="true" ? 
                 <ListItem button onClick = {()=>handleCompId(3)} disabled={id==null} selected = {compId == 3}>
                     <ListItemIcon>
                     <DashboardIcon />
                     </ListItemIcon>
                 <ListItemText primary="Update Company" />
                 </ListItem>
+                : ""}
                 <ListItem onClick = {()=>handleCompId(4)} button disabled={id==null} selected = {compId == 4}> 
                     <ListItemIcon>
                     <DashboardIcon />
@@ -233,13 +238,14 @@ const useStyles = makeStyles((theme) => ({
                 <ListItemText primary="Stock Exchanges"/>
                 </ListItem>
 
+                {localStorage.getItem('admin')=="true" ? 
                 <ListItem onClick = {()=>handleCompId(5)} button disabled={id==null} selected = {compId == 5}>
                     <ListItemIcon>
                     <DashboardIcon />
                     </ListItemIcon>
                 <ListItemText primary="Map to Stock Exchange" />
                 </ListItem>
-
+                : ""}
              
                 
                 <ListItem onClick = {()=>handleCompId(6)} button disabled={id==null} selected = {compId == 6}>

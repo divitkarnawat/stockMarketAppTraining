@@ -9,7 +9,7 @@ export default class HomePage extends React.Component{
     {
         return (
 
-            <div className = "homepage">
+            <div className = "homepage homepage_">
                 <h1>Stock Market Charting Application</h1>
                 <div className = "homepage-main">
                 <h2> Getting Started</h2>

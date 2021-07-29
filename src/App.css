@@ -46,6 +46,16 @@ form{
   z-index: 3000 !important;
   
 }
+.uploadStockPriceTable
+{
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+}
+
+.uploadStockPriceTable td
+{
+  padding: 5px !important;
+}
 
 .dashboardAppBar
 {

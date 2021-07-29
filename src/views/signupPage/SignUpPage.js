@@ -12,6 +12,7 @@ const axios = require('axios');
 
 const textFieldLabels = ["Username","Password","Email","Mobile Number"];
 const textFieldNames = ["name","password","email","mobileNumber"];
+const textFieldTypes = ["text","password","text","text"];
 
 export default class SignUpPage extends React.Component{
     
@@ -123,6 +124,7 @@ export default class SignUpPage extends React.Component{
                     {
                         textFieldNames.map((tfn,id) => (
                             <TextField 
+                        type = {textFieldTypes[id]}
                         required
                         id={tfn}
                         name={tfn}
@@ -181,7 +183,7 @@ export default class SignUpPage extends React.Component{
                 <Snackbar open={this.state.open} autoHideDuration={6000} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} onClose={this.handleClose}>
                 <MuiAlert variant = 'filled' onClose={this.handleClose} severity={this.state.globalError ? "error" : "success"}>
            {
-               this.state.globalError == "" ? `Click on the link sent to mail for validation`  : this.state.globalError
+               this.state.globalError == "" ? `Click on the link sent to mail`  : this.state.globalError
            }
         </MuiAlert>
       </Snackbar>

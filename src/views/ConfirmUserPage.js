@@ -22,7 +22,7 @@ export default class ConfirmUserPage extends React.Component
     render()
     {
         return(
-            <div className = "homepage">
+            <div className = "homepage homepage_">
             <CircularProgress /> 
             Confirming...   You will be redirected to sign in page
             </div>
