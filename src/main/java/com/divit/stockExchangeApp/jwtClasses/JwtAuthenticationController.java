@@ -69,12 +69,12 @@ public class JwtAuthenticationController {
 		}
 	}
 	
-	@GetMapping(path = "/confirmUser/{id}")
-	public ResponseEntity<String> confirmUser(@PathVariable Long id)
-	{
-		return new ResponseEntity<String>(userDetailsService.confirmUser(id), HttpStatus.OK);
-	}
-	
+//	@GetMapping(path = "/confirmUser/{id}")
+//	public ResponseEntity<String> confirmUser(@PathVariable Long id)
+//	{
+//		return new ResponseEntity<String>(userDetailsService.confirmUser(id), HttpStatus.OK);
+//	}
+//	
 	@GetMapping(path = "/user_details/{id}")
 	public ResponseEntity<User1> getUserById(@PathVariable String id)
 	{
