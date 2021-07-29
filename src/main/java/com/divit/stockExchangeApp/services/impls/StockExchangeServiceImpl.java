@@ -4,6 +4,7 @@ package com.divit.stockExchangeApp.services.impls;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,8 +63,8 @@ public class StockExchangeServiceImpl implements StockExchangeService {
 		return Optional.ofNullable(stockExchange.getCompstockmap()).map(
 												list->list.stream()
 												.map(csem->csem.getCompany())
-												.toList())
-									.orElseGet(null);
+												.collect(Collectors.toList()))
+									.orElse(null);
 				
 	}
 
