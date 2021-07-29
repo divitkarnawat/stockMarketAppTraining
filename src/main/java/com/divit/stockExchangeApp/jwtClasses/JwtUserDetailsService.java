@@ -76,7 +76,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 			throw new ResourceAlreadyExistsException("User", user.getname());
 		}
 		
-		newUser.setConfirmed(false);
+		newUser.setConfirmed(true);
 		newUser.setname(user.getname());
 	    newUser.setpassword(bcryptEncoder.encode(user.getpassword()));
 	    newUser.setemail(user.getemail());
@@ -84,84 +84,82 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setAdmin(user.getAdmin());
 		newUser.setMobileNumber(user.getMobileNumber());
 		com.divit.stockExchangeApp.jwtClasses.User1 userSaved = appUserRepository.save(newUser);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Responded", "UserController");
-		headers.add("Access-Control-Allow-Origin", "*");
-		try {
-			sendemail((Long) userSaved.getId());
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.add("Responded", "UserController");
+//		headers.add("Access-Control-Allow-Origin", "*");
+//		try {
+//			sendemail((Long) userSaved.getId());
+//		} catch (AddressException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (MessagingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return userSaved;
 	}
 	
-	public void sendemail(Long userid) throws AddressException, MessagingException {
-
-	      User1 appUser = appUserRepository.getById(userid);	
-
-			final String username = "divitkarnawat1@gmail.com";
-			final String password = "23Pmsdkarnawat";
-
-			Properties prop = new Properties();
-			prop.put("mail.smtp.host", "smtp.gmail.com");
-			prop.put("mail.smtp.port", "465");
-			prop.put("mail.smtp.auth", "true");
-			prop.put("mail.smtp.starttls.enable", "true");
-			prop.put("mail.smtp.starttls.required", "true");
-			prop.put("mail.smtp.ssl.protocols", "TLSv1.2");
-			prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-
-			Session session = Session.getInstance(prop,
-					new javax.mail.Authenticator() {
-				protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-					return new javax.mail.PasswordAuthentication(username, password);
-				}
-			});
-
-			try {
-
-				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("sftrainerram@gmail.com"));
-				//message.setRecipients(
-					//	Message.RecipientType.TO,
-					//	InternetAddress.parse("sftrainerram@gmail.com")
-					//	);
-				message.setRecipients(
-						Message.RecipientType.TO,
-						InternetAddress.parse(appUser.getemail())
-						);
-				message.setSubject("USer confirmation email");
-				//     message.setText("Dear Mail Crawler,"
-				//           + "\n\n Please do not spam my email!");
-				message.setContent(
-						"<h1><a href =\"http://localhost:3000/confirmuser/"+userid+"/\"> Click to confirm </a></h1>",
-						"text/html");
-				Transport.send(message);
-
-				System.out.println("Done");
-
-			} catch (MessagingException e) {
-				e.printStackTrace();
-			}
-		}
-
-
+//	public void sendemail(Long userid) throws AddressException, MessagingException {
+//
+//	      User1 appUser = appUserRepository.getById(userid);	
+//
+//
+//			Properties prop = new Properties();
+//			prop.put("mail.smtp.host", "smtp.gmail.com");
+//			prop.put("mail.smtp.port", "465");
+//			prop.put("mail.smtp.auth", "true");
+//			prop.put("mail.smtp.starttls.enable", "true");
+//			prop.put("mail.smtp.starttls.required", "true");
+//			prop.put("mail.smtp.ssl.protocols", "TLSv1.2");
+//			prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+//
+//			Session session = Session.getInstance(prop,
+//					new javax.mail.Authenticator() {
+//				protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+//					return new javax.mail.PasswordAuthentication(username, password);
+//				}
+//			});
+//
+//			try {
+//
+//				Message message = new MimeMessage(session);
+//				message.setFrom(new InternetAddress("sftrainerram@gmail.com"));
+//				//message.setRecipients(
+//					//	Message.RecipientType.TO,
+//					//	InternetAddress.parse("sftrainerram@gmail.com")
+//					//	);
+//				message.setRecipients(
+//						Message.RecipientType.TO,
+//						InternetAddress.parse(appUser.getemail())
+//						);
+//				message.setSubject("USer confirmation email");
+//				//     message.setText("Dear Mail Crawler,"
+//				//           + "\n\n Please do not spam my email!");
+//				message.setContent(
+//						"<h1><a href =\"http://localhost:3000/confirmuser/"+userid+"/\"> Click to confirm </a></h1>",
+//						"text/html");
+//				Transport.send(message);
+//
+//				System.out.println("Done");
+//
+//			} catch (MessagingException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//
+//
 	
-	public String confirmUser(Long id) {
-		Optional<User1> userlist =   appUserRepository.findById(id);
-		if(!userlist.isPresent())
-		{
-			throw new ResourceNotFoundException("User", id);
-		}
-		User1 user = userlist.get();
-		user.setConfirmed(true);
-		appUserRepository.save(user);
-		return "Confirmed";
-	}
+//	public String confirmUser(Long id) {
+//		Optional<User1> userlist =   appUserRepository.findById(id);
+//		if(!userlist.isPresent())
+//		{
+//			throw new ResourceNotFoundException("User", id);
+//		}
+//		User1 user = userlist.get();
+//		user.setConfirmed(true);
+//		appUserRepository.save(user);
+//		return "Confirmed";
+//	}
 	public User1 findById(Long id) {
 		
 		return appUserRepository.findById(id).get();
