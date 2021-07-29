@@ -50,7 +50,7 @@ export default class ShowAppUserList extends React.Component{
 
     componentDidMount()
     {
-        axios.get('http://localhost:8080/users')
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/users')
         .then(response => {
             this.data = response.data;
             this.setState({onLoad: true});
@@ -79,7 +79,7 @@ export default class ShowAppUserList extends React.Component{
                 <Button
                         variant="contained"
                         color="primary"
-                        href={`http://localhost:3000/users/id/` + row.id}                     
+                        href={`https://stock-market-application-divit.herokuapp.com/users/id/` + row.id}                     
                         endIcon={<SendIcon />}
                     >
                         Open

@@ -164,7 +164,7 @@ class ShowChartCompany extends Component {
       let sendDetails = {...this.state.details, companyName: ""};
       let req = [];
       this.state.companyName.map(cname => {
-          req.push( axios.post(`http://localhost:8080/stock_prices/getStockPriceForCompanyChart`, {...this.state.details, companyName: cname}));
+          req.push( axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForCompanyChart`, {...this.state.details, companyName: cname}));
       });
 
       axios.all(req).then(axios.spread((...responses) => {
@@ -174,7 +174,7 @@ class ShowChartCompany extends Component {
       
       
       
-    //   axios.post(`http://localhost:8080/stock_prices/getStockPriceForCompanyChart`, this.state.details)
+    //   axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForCompanyChart`, this.state.details)
     // .then(response =>
     //   {
     //     this.createDataTable(response.data);
@@ -245,8 +245,8 @@ class ShowChartCompany extends Component {
   componentDidMount() {
 
     
-  const requestOne = axios.get(`http://localhost:8080/companies`);
-  const requestTwo = axios.get(`http://localhost:8080/stock_exchanges`);
+  const requestOne = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/companies`);
+  const requestTwo = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges`);
 
 
   axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {

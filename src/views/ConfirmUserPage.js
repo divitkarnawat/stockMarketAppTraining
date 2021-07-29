@@ -12,7 +12,7 @@ export default class ConfirmUserPage extends React.Component
 
     componentDidMount()
     {
-        axios.get(`http://localhost:8080/confirmUser/` + this.props.match.params.userId)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/confirmUser/` + this.props.match.params.userId)
         .then(response => {
             setTimeout(()=> this.props.history.push('/user/signin'), 3000);
         })

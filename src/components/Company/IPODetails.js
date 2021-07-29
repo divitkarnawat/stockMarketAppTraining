@@ -43,7 +43,7 @@ export default class IPODetails extends React.Component
     componentDidMount()
     {
         
-        axios.get(`http://localhost:8080/companies/` + this.props.id + `/isIPOAdded`)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/companies/` + this.props.id + `/isIPOAdded`)
         .then(response=>
             {
                 let compId = 0;

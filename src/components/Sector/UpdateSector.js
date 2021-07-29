@@ -28,7 +28,7 @@ export default class AddSector extends React.Component{
 
     componentDidMount()
     {
-        axios.get('http://localhost:8080/sectors/id/' + this.props.id)
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/sectors/id/' + this.props.id)
         .then(response=> {
             console.log(response.data);
             this.setState({details: response.data});
@@ -64,7 +64,7 @@ export default class AddSector extends React.Component{
         {
             let sendData = this.state.details;
             sendData.id = this.props.id;
-            axios.put(`http://localhost:8080/sectors/update/` + this.props.id, sendData)
+            axios.put(`https://stock-market-app-java-divitk.herokuapp.com/sectors/update/` + this.props.id, sendData)
               .then(response=> {
                 this.setState({
              

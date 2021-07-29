@@ -74,7 +74,7 @@ export default class AddIPO extends React.Component{
         
         if(!this.checkErrors())
         {
-            axios.post(`http://localhost:8080/companies/` + this.props.company_id + `/ipo`, this.state.details)
+            axios.post(`https://stock-market-app-java-divitk.herokuapp.com/companies/` + this.props.company_id + `/ipo`, this.state.details)
               .then(response=> {
                 this.setState({
              

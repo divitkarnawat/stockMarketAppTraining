@@ -50,7 +50,7 @@ export default class ShowStockExchangeList extends React.Component{
 
     componentDidMount()
     {
-        axios.get('http://localhost:8080/stock_exchanges')
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges')
         .then(response => {
             this.data = response.data;
             this.setState({onLoad: true});

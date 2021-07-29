@@ -78,7 +78,7 @@ export default class SignUpPage extends React.Component{
         {
             let sendDetails = this.state.details;
             sendDetails.role = sendDetails.admin?"Admin" : "User";
-            axios.post('http://localhost:8080/register', sendDetails)
+            axios.post('https://stock-market-app-java-divitk.herokuapp.com/register', sendDetails)
               .then(response=> {
                 this.setState({
              
@@ -175,7 +175,7 @@ export default class SignUpPage extends React.Component{
                         className="submitBtn"
                         size="large"
                         style={{marginTop: `20px`}}
-                        href = "http://localhost:3000/user/signin"
+                        href = "https://stock-market-application-divit.herokuapp.com/user/signin"
                         endIcon={<SendIcon />}
                     >
                         Sign In

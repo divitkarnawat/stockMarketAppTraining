@@ -36,14 +36,14 @@ export default class MaptoStockExchange extends React.Component{
     {
         let companyNameGet = "";
         
-        axios.get(`http://localhost:8080/stock_exchanges`)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges`)
         .then(response =>
             {
                 this.dataStockExchange = response.data;
             })
         .catch(error => console.log(error));
 
-        axios.get(`http://localhost:8080/companies/id/` + this.props.id)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/companies/id/` + this.props.id)
         .then(response =>
             {
                 this.setState(prevState =>{
@@ -93,7 +93,7 @@ export default class MaptoStockExchange extends React.Component{
         e.preventDefault();
         if(!this.checkErrors())
         {
-            axios.post('http://localhost:8080/mapCompStock', this.state.details)
+            axios.post('https://stock-market-app-java-divitk.herokuapp.com/mapCompStock', this.state.details)
               .then(response=> {
                 this.setState(prevState => { return ({
              

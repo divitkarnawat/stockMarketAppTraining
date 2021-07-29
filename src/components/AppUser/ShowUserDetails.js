@@ -31,7 +31,7 @@ export default class ShowUserDetails extends React.Component
 
     componentDidMount()
     {
-        axios.get(`http://localhost:8080/user_details/` + this.props.id)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/user_details/` + this.props.id)
         .then(response =>
             {
                 

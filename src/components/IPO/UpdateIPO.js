@@ -75,7 +75,7 @@ export default class UpdateIPO extends React.Component{
         {
             let sendData = this.state.details;
             sendData.id = this.props.id;
-            axios.put(`http://localhost:8080/ipo_details/` + this.props.id, sendData)
+            axios.put(`https://stock-market-app-java-divitk.herokuapp.com/ipo_details/` + this.props.id, sendData)
               .then(response=> {
                 this.setState({
              
@@ -122,7 +122,7 @@ export default class UpdateIPO extends React.Component{
 
       componentDidMount()
       {
-          axios.get(`http://localhost:8080/ipo_details/` + this.props.id)
+          axios.get(`https://stock-market-app-java-divitk.herokuapp.com/ipo_details/` + this.props.id)
           .then(response =>
             {
                 

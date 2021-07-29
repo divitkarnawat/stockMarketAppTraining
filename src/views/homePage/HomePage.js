@@ -14,10 +14,10 @@ export default class HomePage extends React.Component{
                 <div className = "homepage-main">
                 <h2> Getting Started</h2>
                 <div className = "homepage-btns">
-                <Button variant="contained" color="primary" href="http://localhost:3000/user/signin">
+                <Button variant="contained" color="primary" href="https://stock-market-application-divit.herokuapp.com/user/signin">
                     SignIn
                 </Button>
-                <Button variant="contained" color="primary" href="http://localhost:3000/user/signup">
+                <Button variant="contained" color="primary" href="https://stock-market-application-divit.herokuapp.com/user/signup">
                     SignUp
                 </Button>
                 </div>

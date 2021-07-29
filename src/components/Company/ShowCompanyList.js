@@ -72,7 +72,7 @@ export default class ShowCompanyList extends React.Component{
 
     componentDidMount()
     {
-        axios.get('http://localhost:8080/companies')
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/companies')
         .then(response => {
             this.data = response.data;
             this.originalData = response.data;

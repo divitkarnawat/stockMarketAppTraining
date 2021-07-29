@@ -23,7 +23,7 @@ export default class NavBarLinks extends React.Component
                 {
                     return <Button                 
                     size ="large"
-                     href = {`http://localhost:3000/`+linkNames[id]} > {linkLabel} </Button>
+                     href = {`https://stock-market-application-divit.herokuapp.com/`+linkNames[id]} > {linkLabel} </Button>
                 })
             }
             </div>

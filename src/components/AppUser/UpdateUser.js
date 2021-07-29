@@ -72,7 +72,7 @@ export default class SignUpPage extends React.Component{
         if(!this.checkErrors())
         {
             
-            axios.post('http://localhost:8080/user_details/update/' + localStorage.getItem("userId"), this.state.details)
+            axios.post('https://stock-market-app-java-divitk.herokuapp.com/user_details/update/' + localStorage.getItem("userId"), this.state.details)
               .then(response=> {
                 this.setState({
              

@@ -53,7 +53,7 @@ export default class ShowCompaniesInSector extends React.Component{
 
     componentDidMount()
     {
-        axios.get(`http://localhost:8080/sectors/` + this.props.id + `/companies`)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/sectors/` + this.props.id + `/companies`)
         .then(response => {
             this.data = response.data;
             this.setState({onLoad: true});

@@ -57,7 +57,7 @@ export default class ShowIPOList extends React.Component{
 
     componentDidMount()
     {
-        axios.get('http://localhost:8080/ipo_details')
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/ipo_details')
         .then(response => {
             this.data = response.data;
             this.setState({onLoad: true});

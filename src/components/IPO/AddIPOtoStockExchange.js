@@ -60,7 +60,7 @@ export default function AddIPOtoStockExchange(props) {
 
   React.useEffect(() =>
   {
-      axios.get(`http://localhost:8080/stock_exchanges`)
+      axios.get(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges`)
       .then(response =>
         {
             setStockExchanges(response.data);
@@ -75,7 +75,7 @@ export default function AddIPOtoStockExchange(props) {
       let sendData = {};
       sendData.stockExchangeList = StockExchangeName;
 
-      axios.post(`http://localhost:8080/ipo_details/` + props.id + `/stock_exchanges`, sendData)
+      axios.post(`https://stock-market-app-java-divitk.herokuapp.com/ipo_details/` + props.id + `/stock_exchanges`, sendData)
       .then(response =>
         {
             setGlobalError("");

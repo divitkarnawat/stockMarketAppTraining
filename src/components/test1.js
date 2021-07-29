@@ -128,7 +128,7 @@ class Test1 extends Component {
 
   handleSubmit = (e)=>{
       e.preventDefault();
-      axios.post(`http://localhost:8080/stock_prices/getStockPriceForCompanyChart`, this.state.details)
+      axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForCompanyChart`, this.state.details)
     .then(response =>
       {
         this.createDataTable(response.data);
@@ -183,8 +183,8 @@ class Test1 extends Component {
   componentDidMount() {
 
     
-  const requestOne = axios.get(`http://localhost:8080/companies`);
-  const requestTwo = axios.get(`http://localhost:8080/stock_exchanges`);
+  const requestOne = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/companies`);
+  const requestTwo = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges`);
 
 
   axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {

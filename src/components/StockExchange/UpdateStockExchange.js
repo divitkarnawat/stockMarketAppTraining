@@ -32,7 +32,7 @@ export default class UpdateStockExchange extends React.Component{
     }
     componentDidMount()
     {
-        axios.get('http://localhost:8080/stock_exchanges/id/' + this.props.id)
+        axios.get('https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges/id/' + this.props.id)
         .then(response=> {
             console.log(response.data);
             this.setState({details: response.data});
@@ -69,7 +69,7 @@ export default class UpdateStockExchange extends React.Component{
         {
             let sendData = this.state.details;
             sendData.id = this.props.id;
-            axios.put(`http://localhost:8080/stock_exchanges/update/` + this.props.id, sendData)
+            axios.put(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges/update/` + this.props.id, sendData)
               .then(response=> {
                 this.setState({
                     details: {

@@ -52,7 +52,7 @@ export default class AddSector extends React.Component{
         e.preventDefault();
         if(!this.checkErrors())
         {
-            axios.post('http://localhost:8080/sectors', this.state.details)
+            axios.post('https://stock-market-app-java-divitk.herokuapp.com/sectors', this.state.details)
               .then(response=> {
                 this.setState({
              

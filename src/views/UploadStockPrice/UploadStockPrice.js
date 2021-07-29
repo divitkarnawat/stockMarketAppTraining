@@ -43,7 +43,7 @@ export default class UploadStockPrice extends React.Component {
       const data = XLSX.utils.sheet_to_json(ws, { header: 1 , raw: false, dateNF: 'yyyy-mm-dd'});
       let sendDetails = {};
       sendDetails.stockPriceList = data;
-      axios.post(`http://localhost:8080/stock_prices/`, sendDetails)
+      axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/`, sendDetails)
       .then(response => console.log(response))
       .catch(error => console.log(error));
       

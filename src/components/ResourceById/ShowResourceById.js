@@ -43,7 +43,7 @@ export default class ShowResourceById extends React.Component{
         const res_name = this.props.res_name;
         const id = this.props.id;
         // const linkAdd = 
-        axios.get(`http://localhost:8080/` + res_name + `/id/` + id)
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/` + res_name + `/id/` + id)
         .then(response => {
             this.data = Object.values(response.data);
             let res_id;

@@ -31,11 +31,11 @@ export default class ShowIPODetails extends React.Component
 
     componentDidMount()
     {
-        axios.get(`http://localhost:8080/ipo_details/` + this.props.id )
+        axios.get(`https://stock-market-app-java-divitk.herokuapp.com/ipo_details/` + this.props.id )
         .then(response =>
             {
                 let listStockExchanges = [];
-                axios.get(`http://localhost:8080/ipo_details/` + this.props.id + `/stock_exchanges`)
+                axios.get(`https://stock-market-app-java-divitk.herokuapp.com/ipo_details/` + this.props.id + `/stock_exchanges`)
                 .then(response1 => {
                     console.log(response1.data);
                     

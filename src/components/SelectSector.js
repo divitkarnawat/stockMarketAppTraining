@@ -25,7 +25,7 @@ export default function SelectSector(props){
 
 
   React.useEffect(() => {
-    axios.get('http://localhost:8080/sectors').then(response => {
+    axios.get('https://stock-market-app-java-divitk.herokuapp.com/sectors').then(response => {
         sectorList = response.data;
         setLoad(true);
     }).catch(error => console.log(error));
@@ -99,7 +99,7 @@ if(!load)
             <Button onClick={handleClose} color="primary">
               Cancel
             </Button>
-            <Button type="submit" color="primary" href="http://localhost:3000/sectors/add">
+            <Button type="submit" color="primary" href="https://stock-market-application-divit.herokuapp.com/sectors/add">
               Add
             </Button>
           </DialogActions>

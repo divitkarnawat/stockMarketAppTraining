@@ -74,7 +74,7 @@ export default class SignInPage extends React.Component{
         {
             
             
-            axios.post('http://localhost:8080/authenticate', this.state.details)
+            axios.post('https://stock-market-app-java-divitk.herokuapp.com/authenticate', this.state.details)
               .then(response=> {
                   
                 localStorage.setItem('token', response.data.token);
@@ -159,7 +159,7 @@ export default class SignInPage extends React.Component{
                     className="submitBtn"
                     size="large"
                     style={{marginTop: `20px`}}
-                    href = "http://localhost:3000/companies"
+                    href = "https://stock-market-application-divit.herokuapp.com/companies"
                     endIcon={<SendIcon />}
                 >
                    Continue

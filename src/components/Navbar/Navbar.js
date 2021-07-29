@@ -96,8 +96,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem > <Button href="http://localhost:3000/user_details">  Profile </Button></MenuItem>
-      <MenuItem > <Button onClick={()=> {localStorage.setItem('token',"")}} href="http://localhost:3000/"> Logout </Button></MenuItem>
+      <MenuItem > <Button href="https://stock-market-application-divit.herokuapp.com/user_details">  Profile </Button></MenuItem>
+      <MenuItem > <Button onClick={()=> {localStorage.setItem('token',"")}} href="https://stock-market-application-divit.herokuapp.com/"> Logout </Button></MenuItem>
     </Menu>
   );
 

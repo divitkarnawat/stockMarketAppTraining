@@ -180,10 +180,10 @@ class ShowChartCompanySector extends Component {
       let sendDetails = {...this.state.details, sectorName: ""};
       let req = [];
       this.state.companyName.map(cname => {
-        req.push( axios.post(`http://localhost:8080/stock_prices/getStockPriceForCompanyChart`, {...this.state.details, companyName: cname}));
+        req.push( axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForCompanyChart`, {...this.state.details, companyName: cname}));
     });
       this.state.sectorName.map(cname => {
-          req.push( axios.post(`http://localhost:8080/stock_prices/getStockPriceForSectorChart`, {...this.state.details, sectorName: cname}));
+          req.push( axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForSectorChart`, {...this.state.details, sectorName: cname}));
       });
       
 
@@ -194,7 +194,7 @@ class ShowChartCompanySector extends Component {
       
       
       
-    //   axios.post(`http://localhost:8080/stock_prices/getStockPriceForSectorChart`, this.state.details)
+    //   axios.post(`https://stock-market-app-java-divitk.herokuapp.com/stock_prices/getStockPriceForSectorChart`, this.state.details)
     // .then(response =>
     //   {
     //     this.createDataTable(response.data);
@@ -264,9 +264,9 @@ class ShowChartCompanySector extends Component {
   // We are creating the DataTable immidietly after the component is mounted
   componentDidMount() {
 
-  const requestOne = axios.get(`http://localhost:8080/companies`);
-  const requestTwo = axios.get(`http://localhost:8080/sectors`);
-  const requestThree = axios.get(`http://localhost:8080/stock_exchanges`);
+  const requestOne = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/companies`);
+  const requestTwo = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/sectors`);
+  const requestThree = axios.get(`https://stock-market-app-java-divitk.herokuapp.com/stock_exchanges`);
 
 
   axios.all([requestOne, requestTwo, requestThree]).then(axios.spread((...responses) => {
