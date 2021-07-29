@@ -26,7 +26,7 @@ import com.divit.stockExchangeApp.services.StockPriceService;
 
 @RestController
 @RequestMapping("/companies")
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class CompanyController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());

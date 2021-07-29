@@ -22,7 +22,7 @@ import com.divit.stockExchangeApp.exceptions.CustomBadCredentialsException;
 import com.divit.stockExchangeApp.exceptions.ResourceAlreadyExistsException;
 
 @RestController
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class JwtAuthenticationController {
 
 	@Autowired

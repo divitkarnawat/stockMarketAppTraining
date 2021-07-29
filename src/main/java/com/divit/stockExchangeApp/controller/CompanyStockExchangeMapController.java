@@ -18,7 +18,7 @@ import com.divit.stockExchangeApp.repositories.CompanyStockExchangeMapRepository
 import com.divit.stockExchangeApp.services.CompanyStockExchangeMapService;
 
 @RestController
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class CompanyStockExchangeMapController {
 	
 	@Autowired

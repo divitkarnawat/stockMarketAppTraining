@@ -23,7 +23,7 @@ import com.divit.stockExchangeApp.services.SectorService;
 
 @RestController
 @RequestMapping("/sectors")
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class SectorController {
 	
 	@Autowired

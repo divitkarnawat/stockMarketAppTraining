@@ -21,7 +21,7 @@ import com.divit.stockExchangeApp.services.StockPriceService;
 
 @RestController
 @RequestMapping("/stock_prices")
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class StockPriceController {
 	
 	@Autowired

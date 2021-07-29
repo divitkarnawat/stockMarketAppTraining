@@ -18,7 +18,7 @@ import com.divit.stockExchangeApp.services.AppUserService;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class AppUserController {
 	
 	@Autowired

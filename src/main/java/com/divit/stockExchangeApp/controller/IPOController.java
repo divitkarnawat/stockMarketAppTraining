@@ -20,7 +20,7 @@ import com.divit.stockExchangeApp.services.IPOService;
 
 @RestController
 @RequestMapping("/ipo_details")
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins ="https://stock-market-application-divit.herokuapp.com")
 public class IPOController {
 	
 	@Autowired
